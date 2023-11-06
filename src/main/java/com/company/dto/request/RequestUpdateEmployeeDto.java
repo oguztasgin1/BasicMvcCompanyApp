@@ -11,9 +11,9 @@ import lombok.NoArgsConstructor;
 @Builder
 public class RequestUpdateEmployeeDto {
     Long id;
-    String password;
+    String name;
     String email;
-    String avatar;
-    @Builder.Default
-    private ERole role=ERole.EMPLOYEE;
+    String surname;
+    String companyName;
+
 }

@@ -45,6 +45,7 @@ public class CompanyMvcController {
     @PostMapping(REGISTER)
     public ModelAndView register(RequestCompanyDto dto){
         ModelAndView model = new ModelAndView();
+        System.out.println(dto.getCompanyName());
 
         if(companyService.existsCompanyByCompanyName(dto.getCompanyName())){
             model.setViewName("companyRegister");
@@ -52,7 +53,7 @@ public class CompanyMvcController {
                     dto.getCompanyName()+"Company name has already registered");
         }else{
             companyService.register(dto);
-            return new ModelAndView("redirect:companyRegister");
+            return new ModelAndView("redirect:register");
         }
         return model;
     }

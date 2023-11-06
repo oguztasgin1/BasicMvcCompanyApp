@@ -11,17 +11,13 @@
 </head>
 <body>
 <div class="contanier">
-    <!-- Header Alanı başlık kısmı burada olacak       -->
     <div class="row text-center text-success">
         <h1 class="title-center">
             <label th:text="${model.title}"></label>
         </h1>
     </div>
-    <!-- Header END      -->
-    <!-- Body Alanımız       -->
     <div class="row">
         <div class="col-md-1"></div>
-        <!--  Menü Alanı           -->
         <div class="col-md-2">
             <ul class="navbar-nav navbar-info bg-info">
                 <li class="nav-item" th:each="menu : ${model.menuMap.keySet()}">
@@ -32,7 +28,7 @@
         </div>
         <div class="col-md-8">
             <div class="row">
-                <form action="save" method="post" enctype="multipart/form-data">
+                <form action="register" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-8">
                             <div class="mb3">
@@ -44,19 +40,13 @@
                             <button type="submit" class="btn btn-primary">S A V E</button>
                         </div>
                     </div>
-
                 </form>
 
             </div>
-            <!-- Input END                -->
-            <!-- Tablo Alanı               -->
 
-            <!-- Tablo END              -->
         </div>
-        <!-- Bilgi Giriş END           -->
         <div class="col-md-1"></div>
     </div>
-    <!-- Body END        -->
 </div>
 
 

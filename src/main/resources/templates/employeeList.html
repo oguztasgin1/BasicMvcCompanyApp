@@ -57,7 +57,7 @@
                         <td><label th:text="${employee.company.companyName}"/></td>
                         <td>
                             <a href="#" class="btn btn-primary"
-                               th:attr="onclick=|duzenle(${employee.id},'${employee.name}',${employee.surname},'${employee.email}',${employee.role},'${employee.company.companyName}')|"
+                               th:attr="onclick=|duzenle(${employee.id},'${employee.name}','${employee.surname}','${employee.email}', '${employee.company.companyName}')|"
                                data-bs-toggle="modal" data-bs-target="#modalDuzenle">
                                 Update
                             </a>
@@ -96,20 +96,20 @@
                     <div class="row">
                         <div class="col-md-8">
                             <div class="mb3">
-                                <label for="g_id" class="form-label">Id</label>
-                                <input type="text" class="form-control" id="g_id" name="id" readonly />
+                                <label for="id" class="form-label">Id</label>
+                                <input type="text" class="form-control" id="id" name="id" readonly />
                             </div>
                             <div class="mb3">
-                                <label for="g_name" class="form-label">Employee Name</label>
-                                <input type="text" class="form-control" id="g_name" name="name" required>
+                                <label for="name" class="form-label">Employee Name</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
                             </div>
                             <div class="mb3">
-                                <label for="g_surname" class="form-label">Employee Surname</label>
-                                <input type="text" class="form-control" id="g_surname" name="surname" required>
+                                <label for="surname" class="form-label">Employee Surname</label>
+                                <input type="text" class="form-control" id="surname" name="surname" required>
                             </div>
                             <div class="mb3">
-                                <label for="g_email" class="form-label">Employee Email</label>
-                                <input type="text" class="form-control" id="g_email" name="g_email" required>
+                                <label for="email" class="form-label">Employee Email</label>
+                                <input type="text" class="form-control" id="email" name="email" required>
                             </div>
                         </div>
                         <div class="col-md-12 d-grid mt-2">
@@ -156,10 +156,10 @@
 </script>
 <script>
     function duzenle(id,name,surname,email){
-        const txtg_id = document.getElementById('g_id');
-        const txtg_name = document.getElementById('g_name');
-        const txtg_surname = document.getElementById('g_surname');
-        const txtg_email = document.getElementById('g_email');
+        const txtg_id = document.getElementById('id');
+        const txtg_name = document.getElementById('name');
+        const txtg_surname = document.getElementById('surname');
+        const txtg_email = document.getElementById('email');
         txtg_id.value = id;
         txtg_name.value = name;
         txtg_surname.value = surname;

@@ -3,10 +3,12 @@ package com.company.mvccontroller;
 import com.company.dto.request.LoginRequestDto;
 import com.company.dto.request.RegisterEmployeeRequestDto;
 import com.company.dto.request.RequestCompanyDto;
+import com.company.dto.request.RequestUpdateEmployeeDto;
 import com.company.mvccontroller.models.EmployeeModel;
 import com.company.repository.entity.Employee;
 import com.company.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -55,7 +57,7 @@ public class EmployeeMvcController {
                     dto.getCompanyName()+"Employee e-mail has already registered");
         }else{
             employeeService.register(dto);
-            return new ModelAndView("redirect:employeeRegister");
+            return new ModelAndView("redirect:register");
         }
         return model;
     }
@@ -93,6 +95,18 @@ public class EmployeeMvcController {
         }
 
         return new ModelAndView("redirect:welcome");
+    }
+
+    @PostMapping(UPDATE)
+    public ModelAndView update(RequestUpdateEmployeeDto dto){
+        try{
+            if(dto.getId() !=null && dto.getId()>0)
+                employeeService.updateById(dto);
+        }catch (Exception exception){
+            System.out.println("hata oluştu...: "+ exception.toString());
+        }
+
+        return new ModelAndView("redirect:findall");
     }
 
 }
